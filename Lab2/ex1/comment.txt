@@ -1,0 +1,9 @@
+W przypadku kopiowania szybsze okazały się wywołania funkcji bibliotecznych.
+Różnica ta była tym większa, im mniejsze były bloki. Dla największych bloków 
+wywołania systemowe okazały się odrobine szybsze.
+
+W przypadku sortowania z kolei tendencja jest odwrotna.
+Dla małych rekordów funkcje systemowe są znacznie wydajniesze
+niż funkcje biblioteczne. Porównywalną wydajność uzyskujemy
+dla dużych bloków (4096B).
+

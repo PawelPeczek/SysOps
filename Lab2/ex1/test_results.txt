@@ -1,0 +1,209 @@
+-----	COPY TESTS	-----
+
+Copy system calls, block size = 4B
+===================================================================
+[TIME STATS]
+Real time: 606.888756 ms (61 tics with system CLK_TCK: 100 tics/s)
+User time: 2 tics
+System time: 58 tics
+===================================================================
+
+Copy system calls, block size = 512B
+===================================================================
+[TIME STATS]
+Real time: 6.180088 ms (1 tics with system CLK_TCK: 100 tics/s)
+User time: 0 tics
+System time: 0 tics
+===================================================================
+
+Copy system calls, block size = 4096B
+===================================================================
+[TIME STATS]
+Real time: 2.568685 ms (0 tics with system CLK_TCK: 100 tics/s)
+User time: 0 tics
+System time: 0 tics
+===================================================================
+
+Copy system calls, block size = 8192B
+===================================================================
+[TIME STATS]
+Real time: 1.438833 ms (0 tics with system CLK_TCK: 100 tics/s)
+User time: 0 tics
+System time: 0 tics
+===================================================================
+
+Copy library calls, block size = 4B
+===================================================================
+[TIME STATS]
+Real time: 19.769476 ms (2 tics with system CLK_TCK: 100 tics/s)
+User time: 1 tics
+System time: 0 tics
+===================================================================
+
+Copy library calls, block size = 512B
+===================================================================
+[TIME STATS]
+Real time: 2.000265 ms (1 tics with system CLK_TCK: 100 tics/s)
+User time: 0 tics
+System time: 0 tics
+===================================================================
+
+Copy library calls, block size = 4096B
+===================================================================
+[TIME STATS]
+Real time: 1.544486 ms (0 tics with system CLK_TCK: 100 tics/s)
+User time: 0 tics
+System time: 0 tics
+===================================================================
+
+Copy library calls, block size = 8192B
+===================================================================
+[TIME STATS]
+Real time: 2.473590 ms (1 tics with system CLK_TCK: 100 tics/s)
+User time: 0 tics
+System time: 0 tics
+===================================================================
+
+-----	COPY TESTS END	-----
+
+-----	SORT TESTS	-----
+
+
+--	Record size: 4B	--
+
+Sort system calls, block size = 4B, elems = 1000 
+===================================================================
+[TIME STATS]
+Real time: 654.135360 ms (65 tics with system CLK_TCK: 100 tics/s)
+User time: 3 tics
+System time: 61 tics
+===================================================================
+
+Sort lib calls, block size = 4B, elems = 1000 
+===================================================================
+[TIME STATS]
+Real time: 823.980775 ms (83 tics with system CLK_TCK: 100 tics/s)
+User time: 11 tics
+System time: 70 tics
+===================================================================
+
+Sort system calls, block size = 4B, elems = 2000 
+===================================================================
+[TIME STATS]
+Real time: 2684.038246 ms (268 tics with system CLK_TCK: 100 tics/s)
+User time: 15 tics
+System time: 251 tics
+===================================================================
+
+Sort lib calls, block size = 4B, elems = 2000 
+===================================================================
+[TIME STATS]
+Real time: 3648.026829 ms (365 tics with system CLK_TCK: 100 tics/s)
+User time: 57 tics
+System time: 305 tics
+===================================================================
+
+
+--	Record size: 512B	--
+
+Sort system calls, block size = 512B, elems = 1000 
+===================================================================
+[TIME STATS]
+Real time: 764.380281 ms (76 tics with system CLK_TCK: 100 tics/s)
+User time: 5 tics
+System time: 70 tics
+===================================================================
+
+Sort lib calls, block size = 512B, elems = 1000 
+===================================================================
+[TIME STATS]
+Real time: 1000.090741 ms (100 tics with system CLK_TCK: 100 tics/s)
+User time: 17 tics
+System time: 80 tics
+===================================================================
+
+Sort system calls, block size = 512B, elems = 2000 
+===================================================================
+[TIME STATS]
+Real time: 3064.312073 ms (307 tics with system CLK_TCK: 100 tics/s)
+User time: 17 tics
+System time: 285 tics
+===================================================================
+
+Sort lib calls, block size = 512B, elems = 2000 
+===================================================================
+[TIME STATS]
+Real time: 4000.324415 ms (400 tics with system CLK_TCK: 100 tics/s)
+User time: 67 tics
+System time: 325 tics
+===================================================================
+
+
+--	Record size: 4096B	--
+
+Sort system calls, block size = 4096B, elems = 1000 
+===================================================================
+[TIME STATS]
+Real time: 975.814725 ms (97 tics with system CLK_TCK: 100 tics/s)
+User time: 5 tics
+System time: 90 tics
+===================================================================
+
+Sort lib calls, block size = 4096B, elems = 1000 
+===================================================================
+[TIME STATS]
+Real time: 1453.028957 ms (145 tics with system CLK_TCK: 100 tics/s)
+User time: 18 tics
+System time: 124 tics
+===================================================================
+
+Sort system calls, block size = 4096B, elems = 2000 
+===================================================================
+[TIME STATS]
+Real time: 5289.475013 ms (529 tics with system CLK_TCK: 100 tics/s)
+User time: 23 tics
+System time: 499 tics
+===================================================================
+
+Sort lib calls, block size = 4096B, elems = 2000 
+===================================================================
+[TIME STATS]
+Real time: 4722.532538 ms (472 tics with system CLK_TCK: 100 tics/s)
+User time: 52 tics
+System time: 415 tics
+===================================================================
+
+
+--	Record size: 8192B	--
+
+Sort system calls, block size = 8192B, elems = 1000 
+===================================================================
+[TIME STATS]
+Real time: 1614.479092 ms (161 tics with system CLK_TCK: 100 tics/s)
+User time: 5 tics
+System time: 154 tics
+===================================================================
+
+Sort lib calls, block size = 8192B, elems = 1000 
+===================================================================
+[TIME STATS]
+Real time: 1678.754152 ms (168 tics with system CLK_TCK: 100 tics/s)
+User time: 13 tics
+System time: 152 tics
+===================================================================
+
+Sort system calls, block size = 8192B, elems = 2000 
+===================================================================
+[TIME STATS]
+Real time: 6660.512458 ms (666 tics with system CLK_TCK: 100 tics/s)
+User time: 23 tics
+System time: 636 tics
+===================================================================
+
+Sort lib calls, block size = 8192B, elems = 2000 
+===================================================================
+[TIME STATS]
+Real time: 6906.414128 ms (691 tics with system CLK_TCK: 100 tics/s)
+User time: 51 tics
+System time: 633 tics
+===================================================================
