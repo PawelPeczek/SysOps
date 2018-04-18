@@ -51,15 +51,11 @@ int proceedBatchInterpretation(ProgramInput* input){
 int _proceedInterpretationLoop(FILE* fileStream, ProgramInput* input){
     PipeArgs** args;
     int line = 1, opStatus = OP_OK;
-    //printf("Start processing line %d\n", line);
-    while((args = preprocessLineOfFile(fileStream)) != NULL){ 
-        //printf("Line %d processed\n", line);       
+    while((args = preprocessLineOfFile(fileStream)) != NULL){  
         opStatus = _handle_pipe(args, input, fileStream);
-        //printf("After handle pipe\n");
         freePipeArgs(args);
         if(opStatus == OP_ERROR) break;
         line ++;
-        //printf("Start processing line: %d\n", line);
     }
     if(opStatus == OP_ERROR) _printError(line);
     return opStatus;
@@ -67,35 +63,25 @@ int _proceedInterpretationLoop(FILE* fileStream, ProgramInput* input){
 
 
 int _handle_pipe(PipeArgs** args, ProgramInput* input, FILE* file){
-    //printf("In _handle_pipe\n");
     int N = _count_number_of_pipe_chunks(args);
-    //printf("Counted\n");
     int descriptors[2*N];
     if(_initialize_descriptors(descriptors, N) == OP_ERROR){
         _close_all_pipes(descriptors, N);
         return OP_ERROR;
     }
-    // printf("Descriptors initialized\n");
     for(int i = 0; i < N; i++){
-        //printf("Setting %d command\n", i);
        if(_invokeProcess(args, file, descriptors, i, N) == OP_ERROR){
            _close_all_pipes(descriptors, N);
            return OP_ERROR;
        }
     }
-    //printf("Before print/save\n");
-    //printf("N: %d\n", N);
     _close_unnecesery_pipes_in_parent(descriptors, N);
     if(args[N] == NULL){
-        //printf("To screan\n");
         _print_output(descriptors[2*N - 2]);
     } else {
-        //printf("To file\n");
         _save_output(descriptors[2*N - 2], args[N]->args[0]);
     }
-    //printf("Before closing last descriptor");
     close(descriptors[2*N - 2]);
-    //printf("All done\n");
     return OP_OK;
 }
 
@@ -104,9 +90,6 @@ int _initialize_descriptors(int* descriptors, int N){
         if(pipe(descriptors + 2*i) == OP_ERROR){
             perror("Error while creating pipes.");
             return OP_ERROR;
-        } else {
-            //printf("Initialized pipe: %d\n", descriptors[2*i]);
-            //printf("Initialized pipe: %d\n", descriptors[2*i + 1]);
         }
     }
     return OP_OK;
@@ -114,9 +97,7 @@ int _initialize_descriptors(int* descriptors, int N){
 
 int _count_number_of_pipe_chunks(PipeArgs** args){
     int ctr = 0;
-    //printf("In _count_number_of_pipe_chunks\n");
     while((*args) != NULL){ 
-        //printf("Arg. processing %s\n", (*args)->args[0]);
         if((*args)->is_redirected == false){
             ctr++;
         }
@@ -130,13 +111,7 @@ int _invokeProcess(PipeArgs** args, FILE* file, int* fd, int idx, int num_of_chu
     if(pid == 0){
         fclose(file);
         _close_unnecesery_pipes(fd, idx, num_of_chunks);
-        //printf("After closing in child\n");
         int output;
-        // if(idx != 0){
-        //     printf("IN SEGMENG [%d]: setting fd[%d] into STDIN_FILENO and fd[%d] into STDOUT_FILENO\n", idx, 2*(idx - 1), 2*idx + 1);    
-        // } else {
-        //     printf("IN SEGMENG [%d]: setting fd[%d] into STDOUT_FILENO\n", idx, 2*idx + 1);   
-        // }
         if((idx != 0 && ((dup2(fd[2*(idx - 1)], STDIN_FILENO) == OP_ERROR) | (close(fd[2*(idx - 1)]) == OP_ERROR))) ||
            ((dup2(fd[2*idx + 1], STDOUT_FILENO) == OP_ERROR) | (close(fd[2*idx + 1]) == OP_ERROR)) ||
            (output = execvp(args[idx]->args[0], args[idx]->args)) == OP_ERROR){
@@ -155,14 +130,10 @@ int _invokeProcess(PipeArgs** args, FILE* file, int* fd, int idx, int num_of_chu
 void _close_unnecesery_pipes(int* fd, int idx, int num_of_chunks){
     for(int i = 0; i < num_of_chunks; i++){
         if(idx != i){
-            // closing pipe-ins
             close(fd[2*i + 1]);
-            // printf("IN SEGMENG [%d]: closing fd[%d]\n", idx, 2*i + 1);
         }
         if((idx - 1 != i) && (i > 0)){
-            // closing pipe-outs
             close(fd[2*i]);
-            // printf("IN SEGMENG [%d]: closing fd[%d]\n", idx, 2*i);
         }
     }
 }
@@ -170,7 +141,6 @@ void _close_unnecesery_pipes(int* fd, int idx, int num_of_chunks){
 void _close_unnecesery_pipes_in_parent(int* fd, int num_of_chunks){
     for(int i = 0; i < 2*num_of_chunks; i++){
         if(i != 2*(num_of_chunks -1)){
-            // printf("In parent... closing fd[%d]\n", i);
             close(fd[i]);
         }
     }
@@ -195,7 +165,6 @@ void _print_output(int descriptor){
 }
 
 void _save_output(int descriptor, const char* filename){
-    //printf("Trying to open file\n");
     int save_dscrp = open(filename, O_WRONLY | O_TRUNC | O_CREAT, S_IRUSR | S_IWUSR);
     if(save_dscrp < 0){
         printf("Couldn't save output in file\nInstead the output will be printed out.\n");
