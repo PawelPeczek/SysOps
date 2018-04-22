@@ -9,11 +9,11 @@ When a client wants to establish connection with server it opens server-public q
 * TIME
 * CALC type op1 op2
 where type can be:
-** ADD
-** MUL
-** SUB
-** DIV
-* END - which cause the server to stop. Before that the server processes all requests that was sent to the END-request timestamp. Having processed all pending requests the server sends CL_END requests to clents (which cause the client could close its queue and (in POSIX) close the server-queue). Having received CL_END, the client send back CL_ACK so that all communication channels can be closed properly before returning control to the system.
+  * ADD
+  * MUL 
+  * SUB
+  * DIV
+  * END - which cause the server to stop. Before that the server processes all requests that was sent to the END-request timestamp. Having processed all pending requests the server sends CL_END requests to clents (which cause the client could close its queue and (in POSIX) close the server-queue). Having received CL_END, the client send back CL_ACK so that all communication channels can be closed properly before returning control to the system.
 
 ## Client usage
 In client communictaion loop, an user is able to use all types of requests discussed above and two special commands:
