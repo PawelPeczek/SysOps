@@ -1,0 +1,119 @@
+
+Time statistics given set-up:
+Thread number: 16
+Image size: 640 x 480
+Filter size: 4
+[TIME]: 7
+[USER TIME]: 23
+
+Time statistics given set-up:
+Thread number: 16
+Image size: 640 x 480
+Filter size: 8
+[TIME]: 24
+[USER TIME]: 90
+
+Time statistics given set-up:
+Thread number: 16
+Image size: 640 x 480
+Filter size: 32
+[TIME]: 374
+[USER TIME]: 1404
+
+Time statistics given set-up:
+Thread number: 16
+Image size: 640 x 480
+Filter size: 64
+[TIME]: 1492
+[USER TIME]: 5616
+
+Time statistics given set-up:
+Thread number: 16
+Image size: 640 x 480
+Filter size: 128
+[TIME]: 6954
+[USER TIME]: 24428
+
+Time statistics given set-up:
+Thread number: 8
+Image size: 640 x 480
+Filter size: 4
+[TIME]: 6
+[USER TIME]: 24
+
+Time statistics given set-up:
+Thread number: 8
+Image size: 640 x 480
+Filter size: 8
+[TIME]: 24
+[USER TIME]: 90
+
+Time statistics given set-up:
+Thread number: 8
+Image size: 640 x 480
+Filter size: 32
+[TIME]: 377
+[USER TIME]: 1418
+
+Time statistics given set-up:
+Thread number: 8
+Image size: 640 x 480
+Filter size: 64
+[TIME]: 1579
+[USER TIME]: 5994
+
+Time statistics given set-up:
+Thread number: 4
+Image size: 640 x 480
+Filter size: 4
+[TIME]: 6
+[USER TIME]: 24
+
+Time statistics given set-up:
+Thread number: 4
+Image size: 640 x 480
+Filter size: 8
+[TIME]: 29
+[USER TIME]: 83
+
+Time statistics given set-up:
+Thread number: 4
+Image size: 640 x 480
+Filter size: 32
+[TIME]: 382
+[USER TIME]: 1390
+
+Time statistics given set-up:
+Thread number: 4
+Image size: 640 x 480
+Filter size: 64
+[TIME]: 1574
+[USER TIME]: 5923
+
+Time statistics given set-up:
+Thread number: 2
+Image size: 640 x 480
+Filter size: 4
+[TIME]: 8
+[USER TIME]: 16
+
+Time statistics given set-up:
+Thread number: 2
+Image size: 640 x 480
+Filter size: 8
+[TIME]: 28
+[USER TIME]: 55
+
+Time statistics given set-up:
+Thread number: 2
+Image size: 640 x 480
+Filter size: 32
+[TIME]: 398
+[USER TIME]: 790
+
+Time statistics given set-up:
+Thread number: 2
+Image size: 640 x 480
+Filter size: 64
+[TIME]: 1623
+[USER TIME]: 3220
